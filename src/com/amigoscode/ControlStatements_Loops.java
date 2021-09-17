@@ -1,9 +1,12 @@
 package com.amigoscode;
 
+import java.lang.invoke.SwitchPoint;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ControlStatements_Loops {
     public static void main(String[] args) {
+/*
         int caseSwitch = 14;
 
         switch (caseSwitch){
@@ -32,7 +35,9 @@ public class ControlStatements_Loops {
             System.out.println(i);
         }
 
-        /*Control Statement Exercises*/
+        */
+/*Control Statement Exercises*//*
+
         //1. Loop Basics
         int i = 5;
 
@@ -82,6 +87,31 @@ public class ControlStatements_Loops {
             System.out.printf("%-7d| %-8d| %-5d%n", g, g * g, g * g * g);
 
         }
+*/
+
+        //4.Convert given number grades into letter grades.
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Hello there, please enter your grade below: ");
+        int grade = scan.nextInt();
+        switch (grade/10) {
+            case 9:
+                System.out.println("Your grade: " + grade + " is an A.");
+                break;
+            case 8:
+                System.out.println("Your grade: " + grade + " is a B.");
+                break;
+            case 7:
+                System.out.println("Your grade: " + grade + " is a C.");
+                break;
+            case 6:
+                System.out.println("Your grade: " + grade + " is a D.");
+                break;
+            default:
+                System.out.print("Your grade: " + grade + " is an F.");
+
+            }
+        }
+
+
 
     }
-}
