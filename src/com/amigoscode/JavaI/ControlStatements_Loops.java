@@ -1,4 +1,4 @@
-package com.amigoscode;
+package com.amigoscode.JavaI;
 
 import java.lang.invoke.SwitchPoint;
 import java.sql.SQLOutput;
