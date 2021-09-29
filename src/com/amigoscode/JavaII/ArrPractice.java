@@ -54,12 +54,15 @@ public class ArrPractice {
             System.out.println("+---+---+---+");
 
             System.out.print("| ");
+
             for (int n : row) {
                 System.out.print(n + " | ");
             }
 
             System.out.println();
         }
+
+        System.out.println("+---+---+---+");
 
 
 

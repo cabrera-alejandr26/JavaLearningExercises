@@ -1,0 +1,145 @@
+package com.amigoscode.JavaI.Movies;
+
+import com.amigoscode.JavaII.Person;
+
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class MoviesApplication {
+    public static MoviesArray[] addMovie(MoviesArray[] array, Movie newMovie){
+        MoviesArray[] upArr = Arrays.copyOf(array, array.length + 1);
+        upArr[array.length] = newMovie.getCategory();
+
+        return newMovie;
+    }
+
+
+    public static void movieApp(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Hello, to view our selection of movie titles,");
+        System.out.println("select a number within our options!\n");
+
+        System.out.println("0 - Exit.");
+        System.out.println("1 - View All.");
+        System.out.println("2 - Animation Category.");
+        System.out.println("3 - Horror Category.");
+        System.out.println("4 - Sci-Fi Category.");
+        System.out.println("5 - Add A Movie.\n");
+
+        System.out.println("Your choice:");
+        int userSelection = scan.nextInt();
+
+        System.out.println("\n");
+
+        switch (userSelection){
+
+            case 0:
+                System.out.println("Thank you for choosing Movie Box, goodbye!");
+              System.exit(0);
+                break;
+            case 1:
+                MoviesArray allMovies = new MoviesArray(); //Created a new instance of the MoviesArray class in order to use it in this class, MoviesApplication class.
+
+                for(Movie titles : allMovies.findAll()){
+
+
+                    System.out.println("Title: " + titles.getName().toUpperCase());
+                    System.out.println("Category: " + titles.getCategory());
+                    System.out.println("\n");
+                }
+                break;
+            case 2:
+                MoviesArray animationMovies = new MoviesArray();
+
+                for(Movie animate : animationMovies.findAll()){
+                    if(animate.getCategory().equals("animated")){
+                        System.out.println("Title: " + animate.getName().toUpperCase());
+                        System.out.println("Category: " + animate.getCategory());
+                        System.out.println("\n");
+                    }
+                }
+                System.out.println("Would you like to do something else? Y/N");
+                String userAnswer = scan.next().toUpperCase();
+                System.out.println("\n");
+                if(userAnswer.equals("Y")){
+                    movieApp();//Using Recursion! :D
+                }else{
+                    System.out.println("Thank you for choosing Movie Box, goodbye!");
+                    System.exit(0);//Closing application.
+                }
+                break;
+            case 3:
+                MoviesArray horrorMovies = new MoviesArray();
+
+                for(Movie horror : horrorMovies.findAll()){
+                    if(horror.getCategory().equals("horror")){
+                        System.out.println("Title: " + horror.getName().toUpperCase());
+                        System.out.println("Category: " + horror.getCategory());
+                        System.out.println("\n");
+                    }
+                }
+                System.out.println("Would you like to do something else? Y/N");
+                String userAnswer1 = scan.next().toUpperCase();
+                System.out.println("\n");
+                if(userAnswer1.equals("Y")){
+                    movieApp();//Using Recursion! :D
+                }else{
+                    System.out.println("Thank you for choosing Movie Box, goodbye!");
+                    System.exit(0);//Closing application.
+                }
+                break;
+            case 4:
+                MoviesArray scifiMovies = new MoviesArray();
+
+                for(Movie sci : scifiMovies.findAll()){
+                    if(sci.getCategory().equals("scifi")){
+                        System.out.println("Title: " + sci.getName().toUpperCase());
+                        System.out.println("Category: " + sci.getCategory());
+                        System.out.println("\n");
+                    }
+                }
+                System.out.println("Would you like to do something else? Y/N");
+                String userAnswer2 = scan.next().toUpperCase();
+                System.out.println("\n");
+                if(userAnswer2.equals("Y")){
+                    movieApp();//Using Recursion! :D
+                }else{
+                    System.out.println("Thank you for choosing Movie Box, goodbye!");
+                    System.exit(0);//Closing application.
+                }
+                break;
+            case 5:
+                System.out.println("Please enter movie title and category: ");
+                String titleScan = scan.next();
+                String categoryScan = scan.next();
+                System.out.println("Your input:");
+                System.out.println("Title: " + titleScan.toUpperCase() );
+                System.out.println("Category: " + categoryScan.toLowerCase());
+
+                //Instantiate MoviesArray!
+                MoviesArray movieList = new MoviesArray();//From Array
+                System.out.println(movieList.findAll());
+
+                Movie[] upArr = movieList.findAll();
+
+                Movie newMovie = new Movie(titleScan,categoryScan);//From Movie class
+
+//                movieList = addMovie(movieList, newMovie);
+
+
+
+
+        }
+    }
+    public static void main(String[] args) {
+
+            movieApp();
+
+        }
+
+}
+
+
+
