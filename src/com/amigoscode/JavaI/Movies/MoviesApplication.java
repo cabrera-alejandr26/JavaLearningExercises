@@ -6,13 +6,13 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class MoviesApplication {
-    public static MoviesArray[] addMovie(MoviesArray[] array, Movie newMovie){
-        MoviesArray[] upArr = Arrays.copyOf(array, array.length + 1);
-        upArr[array.length] = newMovie.getCategory();
+import static com.amigoscode.JavaI.Movies.MoviesArray.findAll;
 
-        return newMovie;
-    }
+public class MoviesApplication {
+public static MoviesArray[] addMovies(Movie name, Movie category){
+    MoviesArray movieList = new MoviesArray();//From Array
+    MoviesArray[] moreMovies = Arrays.copyOf(movieList.findAll().length + 1);
+}
 
 
     public static void movieApp(){
@@ -53,7 +53,7 @@ public class MoviesApplication {
             case 2:
                 MoviesArray animationMovies = new MoviesArray();
 
-                for(Movie animate : animationMovies.findAll()){
+                for(Movie animate : findAll()){
                     if(animate.getCategory().equals("animated")){
                         System.out.println("Title: " + animate.getName().toUpperCase());
                         System.out.println("Category: " + animate.getCategory());
@@ -73,7 +73,7 @@ public class MoviesApplication {
             case 3:
                 MoviesArray horrorMovies = new MoviesArray();
 
-                for(Movie horror : horrorMovies.findAll()){
+                for(Movie horror : findAll()){
                     if(horror.getCategory().equals("horror")){
                         System.out.println("Title: " + horror.getName().toUpperCase());
                         System.out.println("Category: " + horror.getCategory());
@@ -93,7 +93,7 @@ public class MoviesApplication {
             case 4:
                 MoviesArray scifiMovies = new MoviesArray();
 
-                for(Movie sci : scifiMovies.findAll()){
+                for(Movie sci : findAll()){
                     if(sci.getCategory().equals("scifi")){
                         System.out.println("Title: " + sci.getName().toUpperCase());
                         System.out.println("Category: " + sci.getCategory());
@@ -119,14 +119,12 @@ public class MoviesApplication {
                 System.out.println("Category: " + categoryScan.toLowerCase());
 
                 //Instantiate MoviesArray!
-                MoviesArray movieList = new MoviesArray();//From Array
-                System.out.println(movieList.findAll());
 
-                Movie[] upArr = movieList.findAll();
 
                 Movie newMovie = new Movie(titleScan,categoryScan);//From Movie class
+                System.out.println(newMovie.getName());
 
-//                movieList = addMovie(movieList, newMovie);
+//
 
 
 
