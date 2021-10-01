@@ -9,10 +9,10 @@ import java.util.Scanner;
 import static com.amigoscode.JavaI.Movies.MoviesArray.findAll;
 
 public class MoviesApplication {
-public static MoviesArray[] addMovies(Movie name, Movie category){
-    MoviesArray movieList = new MoviesArray();//From Array
-    MoviesArray[] moreMovies = Arrays.copyOf(movieList.findAll().length + 1);
-}
+//public static MoviesArray[] addMovies(Movie name, Movie category){
+//    MoviesArray movieList = new MoviesArray();//From Array
+//    MoviesArray[] moreMovies = Arrays.copyOf(movieList.findAll().length + 1);
+//}
 
 
     public static void movieApp(){
